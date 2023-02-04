@@ -1,10 +1,11 @@
 export function movie(data){
     const html = `
-    <article>
+    <article class="col-lg-3">
         <h2>${data.title}</h2>
         <div>${data.description}</div>
-</article>
-    
-    
-    `
+    </article>`
+
+    debugger
+
+    return html
 }
