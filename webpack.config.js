@@ -25,6 +25,6 @@ module.exports = {
             directory: path.join(__dirname, '/')
         },
         compress: true,
-        hot: false,
+        hot: true,
     }
 };

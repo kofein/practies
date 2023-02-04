@@ -12,10 +12,11 @@ input.addEventListener('input', (e) => {
 
     movieService.getVideoByText(searchText)
         .then( result => {
-            console.log(result);
-            //Movies.setList(result)
+            console.log(Movies);
+            Movies.setList(result.result)
+            console.log(Movies);
 
-            //Movies.render(list)
+            Movies.render(list)
         })
 })
 
