@@ -10,9 +10,12 @@ module.exports = {
         rules: [
             {
                 test: /\.m?js$/,
-                exclude: /node_modules/,
+                exclude: /(node_modules)/,
                 use: {
-                    loader: 'babel-loader'
+                    loader: 'babel-loader',
+                    /*options: {
+                        presets: ['stage-0']
+                    }*/
                 }
             }
         ]
@@ -20,6 +23,8 @@ module.exports = {
     devServer: {
         static: {
             directory: path.join(__dirname, '/')
-        }
+        },
+        compress: true,
+        hot: false,
     }
 };
