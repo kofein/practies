@@ -8,9 +8,13 @@ const list = document.querySelector(".movies")
 
 input.addEventListener('input', (e) => {
     const searchText = e.target.value
-    if (!searchText) return
+    if (!searchText) {
+        Movies.clearList(list)
 
-    list.innerHTML = ''
+        return
+    }
+
+    Movies.clearList(list)
 
     movieService.getVideoByText(searchText)
         .then( result => {

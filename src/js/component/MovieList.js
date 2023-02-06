@@ -21,4 +21,8 @@ export default class MovieList {
 
         })
     }
+
+    clearList(selector) {
+        selector.innerHTML = ''
+    }
 }
