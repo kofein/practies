@@ -1,9 +1,14 @@
 export function movie(data){
+    const movie = {}
+
+    Object.assign(movie, data)
+
+    movie.title = movie.name || movie.title
+
     const html = `
-    <article class="col-lg-3">
-        <h2>${data.title}</h2>
-        <div>${data.description}</div>
-    </article>`
+        <h2>#${movie.id} - ${movie.title}</h2>
+        <div>${movie.overview}</div>
+    `
 
     debugger
 

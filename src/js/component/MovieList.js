@@ -7,13 +7,18 @@ export default class MovieList {
     setList(data) {
         this.fragment = document.createDocumentFragment()
 
-        data.forEach(data => () => {
-            const article = document.createElement('article')
-            article.innerHTML = movie(data)
-            article.classList.add('movie')
-            this.fragment.appendChild(article)
-        })
+        data.results.forEach(data => {
+            try {
+                console.log(data);
+                const article = document.createElement('article')
+                article.innerHTML = movie(data)
+                article.classList.add('movie', 'col-lg-3')
+                this.fragment.appendChild(article)
+            } catch(e) {
+                console.log(e);
+            }
 
-        console.log(this.fragment);
+
+        })
     }
 }

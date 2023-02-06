@@ -10,11 +10,11 @@ input.addEventListener('input', (e) => {
     const searchText = e.target.value
     if (!searchText) return
 
+    list.innerHTML = ''
+
     movieService.getVideoByText(searchText)
         .then( result => {
-            console.log(Movies);
-            Movies.setList(result.result)
-            console.log(Movies);
+            Movies.setList(result)
 
             Movies.render(list)
         })
